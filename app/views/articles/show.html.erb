@@ -6,3 +6,9 @@
     <p><%= markdown(@article.body) %></p>
   </blockquote>
 </div>
+<div class="comments">
+  <%= render @article.comments %>
+</div>
+<div class="comment-form">
+  <%= render 'comments/form' %>
+</div>

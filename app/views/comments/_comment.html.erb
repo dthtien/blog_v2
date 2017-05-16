@@ -1,0 +1,8 @@
+<div class="comment">
+  <%= render 'shared/link', record: comment,
+   activate_id: dom_id(comment, :edit) %>
+  <p>
+    <strong><%= comment.user.email %>: </strong>
+    <%= markdown(comment.content) %>
+  </p>
+</div>

@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, except: [:new, :create]
 
   def show
+    @comment = Comment.new
   end
 
   def new

@@ -17,4 +17,12 @@ module ApplicationHelper
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     markdown_to_html.render(text).html_safe
   end
+
+  def display_time(time)
+    if (Time.zone.now - time) > 1.day
+      return l(time, format: "%d %B, %Y at %H:%M")
+    else
+      "#{time_ago_in_words(time)} ago"
+    end
+  end
 end
