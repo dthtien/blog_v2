@@ -9,9 +9,58 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag :div, value, class: "flash #{key}" %>
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+        <%= link_to "Reddit", root_path, class: "brand-logo" %>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "Edit account", edit_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign in", new_user_session_path %>
+            </li> 
+            <li>
+              <%= link_to "Sign up", new_user_registration_path %>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "Edit account", edit_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign in", new_user_session_path %>
+            </li> 
+            <li>
+              <%= link_to "Sign up", new_user_registration_path %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <% flash.each do |key, msg| %>
+      <%= javascript_tag "Materialize.toast('#{msg}', 4000, '#{key}')" %>
     <% end %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <!-- <div class="fixed-action-btn">
+      <%#= link_to new_link_path, 
+        class: "btn-floating btn-large blue pulse tooltipped", 
+        data: {tooltip: "Create link", position: "left"} do %>
+        <i class="material-icons">add</i>
+        <%# end %>
+    </div> -->
   </body>
 </html>

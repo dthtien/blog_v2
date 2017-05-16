@@ -39,3 +39,5 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'materialize-sass', '~> 0.98.1'
 gem 'materialize-form', '~> 1.0.8'
 gem "paperclip", "~> 5.0.0"
+gem 'redcarpet'
+gem 'coderay'

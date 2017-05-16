@@ -1,0 +1,12 @@
+<% if user_signed_in? && policy(record).update? %>
+  <%= link_to "•••", "#", class: "dropdown-button right three_dot", data: {activates: activate_id} %>
+  <ul id=<%= activate_id %> class='dropdown-content'>
+    <li>
+      <%= link_to "Sửa", [:edit, record], class: "black-text" %>
+    </li>
+    <li>
+      <%= link_to "Xóa", record, method: :delete,
+        class: "red-text" %>
+    </li>
+  </ul>   
+<% end %>

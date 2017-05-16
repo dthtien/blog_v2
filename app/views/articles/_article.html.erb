@@ -1,0 +1,8 @@
+<div class="article">
+  <blockquote>
+    <%= render 'shared/link', record: @article,
+       activate_id: dom_id(@article, :edit) %>
+    <h3><%= @article.title %></h3>
+    <p><%= simple_format(@article.body) %></p>
+  </blockquote>
+</div>
