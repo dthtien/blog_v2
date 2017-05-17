@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
-      flash[:notice] = "Commneted!"
+      flash[:notice] = "Commeted!"
     else
       flash[:alert] = "Can't comment"
     end
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
     end
 
     def find_comment
-      @comment = Comment.find(params[id])
+      @comment = Comment.find(params[:id])
       @comment.user
     end
 

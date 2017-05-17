@@ -3,12 +3,19 @@
     <%= render 'shared/link', record: @article,
        activate_id: dom_id(@article, :edit) %>
     <h3><%= @article.title %></h3>
-    <p><%= markdown(@article.body) %></p>
+    <div class="article-content">
+      <%= markdown(@article.body) %>
+    </div>
   </blockquote>
 </div>
-<div class="comments">
-  <%= render @article.comments %>
-</div>
+<% unless @article.comments.blank?  %>
+  <div class="comments">
+    <h4>Comments</h4>
+    <div class="divider"></div>
+    <%= render @article.comments %>
+  </div>
+<% end %>
 <div class="comment-form">
+  <h5>Create comment</h5>
   <%= render 'comments/form' %>
 </div>

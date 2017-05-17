@@ -1,5 +1,6 @@
 <div class="article">
-  <%= link_to article.title, article %>
-  <%= display_time(article.updated_at) %>
-  <%= "#{pluralize(article.comments.count, 'comment')} by #{article.user.email}"  %>
+  <h5><%= link_to article.title, article %></h5>
+  <i><%= "#{display_time(article.updated_at)} by #{article.user.email}" %></i>
+  <p><%= link_to pluralize(article.comments.count, 'comment'), article %></p>
 </div>
+<div class="divider"></div>

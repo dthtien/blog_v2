@@ -1,0 +1,19 @@
+<div class="user-profile">
+  <div class="row">
+    <div class="col s12 m4 l4">
+      <div class="card center user-info">
+        <p><strong>Username: </strong> <%= @user.username %></p>
+        <p><strong>Email: </strong><%= @user.email %></p>
+        <% if user_signed_in? && @user == current_user %>
+          <%= link_to edit_user_registration_path, class: "btn-floating blue tooltipped",
+           data:{position: "left", delay: "10", tooltip: "Edit user"} do %>
+            <i class="material-icons">edit</i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col s12 m8 card hoverable">
+      <%= render @user.articles %>
+    </div>
+  </div>
+</div>

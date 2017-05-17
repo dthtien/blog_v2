@@ -2,7 +2,11 @@
   <%= render 'shared/link', record: comment,
    activate_id: dom_id(comment, :edit) %>
   <p>
-    <strong><%= comment.user.email %>: </strong>
-    <%= markdown(comment.content) %>
+    <strong><%= comment.user.username %></strong>
+    <i><%= display_time(comment.created_at) %></i>
   </p>
+  <div class="comment-content">
+    <%= markdown(comment.content) %>
+  </div> 
+  <div class="divider"></div>
 </div>

@@ -1,6 +1,9 @@
  @import "variables";
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
  @import "materialize";
+ @import "comments";
+ @import "articles";
+ @import "users";
 
 
 .notice{
@@ -21,4 +24,10 @@ body {
 }
 .nav-extended {
   background-color: $primary-color;
+}
+#user-dropdown-larger{
+  margin-top: 62px;
+}
+#user-dropdown-small{
+ margin-top: 60px;
 }

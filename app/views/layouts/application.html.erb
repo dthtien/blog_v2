@@ -16,8 +16,19 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
             <li>
-              <%= link_to "Edit account", edit_user_registration_path %>
+              <a class='dropdown-button' href='#' data-activates='user-dropdown-larger'>
+                <i class="material-icons right">arrow_drop_down</i>    
+                <%= current_user.username %>
+              </a>
             </li>
+            <ul id='user-dropdown-larger' class='dropdown-content'>
+              <li>
+                <%= link_to "Profile", current_user %>
+              </li>
+              <li>
+                <%= link_to "Change info",  edit_user_registration_path %>
+              </li>
+            </ul>  
             <li>
               <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
             </li>
@@ -32,12 +43,23 @@
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <% if user_signed_in? %>
-            <li>
-              <%= link_to "Edit account", edit_user_registration_path %>
+             <li>
+              <a class='dropdown-button' href='#' data-activates='user-dropdown-small'>
+                <i class="material-icons right">arrow_drop_down</i>    
+                <%= current_user.username %>
+              </a>
             </li>
-            <li>
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            </li>
+            <ul id='user-dropdown-small' class='dropdown-content'>
+              <li>
+                <%= link_to "Profile", current_user %>
+              </li>
+              <li>
+                <%= link_to "Change info",  edit_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>  
           <% else %>
             <li>
               <%= link_to "Sign in", new_user_session_path %>
@@ -55,12 +77,5 @@
     <div class="container">
       <%= yield %>
     </div>
-    <!-- <div class="fixed-action-btn">
-      <%#= link_to new_link_path, 
-        class: "btn-floating btn-large blue pulse tooltipped", 
-        data: {tooltip: "Create link", position: "left"} do %>
-        <i class="material-icons">add</i>
-        <%# end %>
-    </div> -->
   </body>
 </html>
