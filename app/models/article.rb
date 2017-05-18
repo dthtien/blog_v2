@@ -5,13 +5,13 @@ class Article < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   before_save :set_description
 
-  validates :title, presence: true, length: {minimum: 10, maximum: 60}
+  validates :title, presence: true, length: {minimum: 10, maximum: 90}
   validates :body, presence: true, length: {minimum: 100}
 
   self.per_page = 10
 
-  searchable do
-    text :title, :body
+  def self.search
+    
   end
 
   private
