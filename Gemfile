@@ -36,10 +36,11 @@ gem 'devise'
 gem 'simple_form'
 gem "pundit"
 gem 'will_paginate', '~> 3.1.0'
-gem 'acts_as_votable', '~> 0.10.0'
 gem 'materialize-sass', '~> 0.98.1'
 gem 'materialize-form', '~> 1.0.8'
-gem "paperclip", "~> 5.0.0"
 gem 'redcarpet'
 gem 'coderay'
 gem 'sunspot_rails'
+group :development do
+    gem 'sunspot_solr'
+end
