@@ -13,7 +13,9 @@
       </div>
     </div>
     <div class="col s12 m8 card hoverable">
+      <%= "There are no articles" if @user.articles.blank?%>
       <%= render @user.articles %>
     </div>
   </div>
 </div>
+<%= render 'shared/bottom_float_button' %>

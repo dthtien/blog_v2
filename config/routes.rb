@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: :show
+  resource :search, only: :show
 end

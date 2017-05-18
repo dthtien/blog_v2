@@ -1,9 +1,18 @@
-<%= render @articles %>
-<%= will_paginate @articles %>
-<div class="fixed-action-btn">
-  <%= link_to new_article_path, 
-    class: "btn-floating btn-large blue pulse tooltipped", 
-    data: {tooltip: "Create article", position: "left"} do %>
-    <i class="material-icons">add</i>
+<div class="container">
+  <%= simple_form_for :search, url: search_path, method: :get do |f| %>
+    <div class="row">
+      <div class="input-field col s11 m11 l11">
+        <%= f.text_field :term %>
+        <%= f.label :search_article %>
+      </div>
+      <div class="input-field col s1 m1 l1">
+        <%= f.button :button,  class: "waves-effect waves-light" do %>
+          <i class="material-icons">search</i>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
+<%= render @articles %>
+<%= will_paginate @articles %>
+<%= render 'shared/bottom_float_button' %>

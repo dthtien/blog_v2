@@ -41,3 +41,7 @@ gem 'materialize-form', '~> 1.0.8'
 gem "paperclip", "~> 5.0.0"
 gem 'redcarpet'
 gem 'coderay'
+gem 'sunspot_rails', '~> 2.2', '>= 2.2.7'
+group :test, :development do
+  gem 'sunspot_solr'
+end
