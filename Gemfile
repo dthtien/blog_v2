@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -40,3 +41,5 @@ gem 'materialize-sass', '~> 0.98.1'
 gem 'materialize-form', '~> 1.0.8'
 gem 'redcarpet'
 gem 'coderay'
+gem 'paperclip', '~> 5.1'
+gem 'aws-sdk', '~> 2.3'

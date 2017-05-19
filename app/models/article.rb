@@ -5,6 +5,9 @@ class Article < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   before_save :set_description, on: :create
 
+  has_attached_file :image, styles: {original: "300x300#"},  default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
   validates :title, presence: true, length: {minimum: 10, maximum: 120}
   validates :body, presence: true, length: {minimum: 100}
 
