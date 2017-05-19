@@ -4,7 +4,7 @@
 
 Submitted by: **tiendt2311@gmail.com**
 
-Time spent: **15** hours spent in total
+Time spent: **10** hours spent in total
 
 URL: **https://warm-reaches-84122.herokuapp.com/**
 
@@ -33,6 +33,7 @@ The following is a list of **required** features of the application you'll build
 
 
 The following **additional** features are implemented:
+
 
 ## Video Walkthrough 
 
