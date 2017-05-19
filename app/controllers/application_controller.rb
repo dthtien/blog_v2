@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
     end
 
      def not_authorized
-      redirect_to root_path, alert: "Bạn không có quyền truy cập "
+      redirect_to root_path, alert: "You have no permission"
     end
 end
