@@ -14,7 +14,7 @@
 </div>
 <% unless @article.comments.blank?  %>
   <div class="comments">
-    <h4>Comments</h4>
+    <h4>Comments(<%= @article.comments_count %>)</h4>
     <div class="divider"></div>
     <%= render @article.comments %>
   </div>

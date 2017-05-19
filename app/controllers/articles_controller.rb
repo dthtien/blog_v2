@@ -49,6 +49,6 @@ class ArticlesController < ApplicationController
     end
 
     def find_article
-      @article = Article.find(params[:id])
+      @article = Article.includes(:user, :comments).find(params[:id])
     end
 end

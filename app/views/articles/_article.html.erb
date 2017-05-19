@@ -7,6 +7,6 @@
   <p>
     <%= markdown(article.description) %><%= link_to "See more >>", article %>
   </p>
-  <p><%= link_to pluralize(article.comments.count, 'comment'), article %></p>
+  <p><%= link_to pluralize(article.comments_count, 'comment'), article %></p>
 </div>
 <div class="divider"></div>
