@@ -2,7 +2,8 @@
   <%= render 'shared/link', record: comment,
    activate_id: dom_id(comment, :edit) %>
   <p>
-    <strong><%= comment.user.username %></strong>
+    <strong><%= link_to "#{comment.user.username}(#{comment.user.email })",
+      comment.user  %></strong>
     <i><%= display_time(comment.created_at) %></i>
   </p>
   <div class="comment-content">

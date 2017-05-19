@@ -5,7 +5,7 @@
     <h3><%= @article.title %></h3>
     <i class="display-time">
       <%= display_time(@article.updated_at) %> by
-      <%= link_to @article.user.username, @article.user %>  
+      <%= link_to "#{@article.user.username} (#{@article.user.email})", @article.user %>  
     </i>
     <div class="article-content">
       <%= markdown(@article.body) %>

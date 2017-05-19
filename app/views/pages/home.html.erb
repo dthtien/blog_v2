@@ -1,5 +1,6 @@
 <div class="container">
-  <%= simple_form_for :search, url: search_path, method: :get do |f| %>
+  <%= simple_form_for :search, url: search_path, method: :get,
+    html: { autocomplete: "off" } do |f| %>
     <div class="row">
       <div class="input-field col s11 m11 l11">
         <%= f.text_field :term %>
