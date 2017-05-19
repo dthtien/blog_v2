@@ -8,7 +8,7 @@
       <%= link_to "#{@article.user.username} (#{@article.user.email})", @article.user %>  
     </i>
     <div class="article-content">
-      <%= image_tag @article.image.url %>
+      <%= image_tag @article.image.url unless  @article.image.blank? %>
       <%= markdown(@article.body) %>
     </div>
   </blockquote>
