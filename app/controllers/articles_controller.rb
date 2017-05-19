@@ -43,12 +43,13 @@ class ArticlesController < ApplicationController
     redirect_to :back
   end
 
-  def vote
-    if @article.get_upvotes.blank?
-      @article.upvote_by current_user
-    else
-       @article.downvote_by current_user
-    end
+  def upvote
+    @article.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @article.downvote_by current_user
     redirect_to :back
   end
 

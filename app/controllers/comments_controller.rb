@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_article, only: :create
-  before_action :find_comment,   only: [:update, :edit, :destroy, :vote]
-
+  before_action :find_comment
   def create
     @comment = @article.comments.build(comment_params)
     @comment.user = current_user
@@ -35,12 +34,13 @@ class CommentsController < ApplicationController
     redirect_to :back
   end
 
-  def vote
-     if @comment.get_upvotes.blank?
-      @comment.upvote_by current_user
-    else
-       @comment.downvote_by current_user
-    end
+  def upvote
+    @comment.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @comment.downvote_by current_user
     redirect_to :back
   end
 

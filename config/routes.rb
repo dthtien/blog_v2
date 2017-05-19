@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     member do
       resources :comments, only: [:create, :update, :edit, :destroy] do
         member do
-          put 'like', to: "comments#vote"
+          put 'like', to: "comments#upvote"
+          put 'dislike', to: "comments#downvote"
         end
       end
-      put 'like', to: "articles#vote"
+      put 'like', to: "articles#upvote"
+      put 'dislike', to: "articles#downvote"
     end
   end
 

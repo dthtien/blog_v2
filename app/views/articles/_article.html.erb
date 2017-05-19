@@ -9,5 +9,6 @@
   </p>
   <p class="chip"><%= link_to pluralize(article.comments_count, 'comment'), article %></p>
   <p class="chip"><%= link_to pluralize(article.get_upvotes.size, 'like'), like_article_path(article), method: :put %></p>
+  <p class="chip"><%= link_to pluralize(article.get_downvotes.size, 'dislike'), dislike_article_path(article), method: :put %></p>
 </div>
 <div class="divider"></div>
