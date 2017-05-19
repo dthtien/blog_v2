@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   resources :articles, except: :index, shallow: true do
     member do
-      resources :comments, only: [:create, :update, :edit, :destroy]
+      resources :comments, only: [:create, :update, :edit, :destroy] do
+        member do
+          put 'like', to: "comments#vote"
+        end
+      end
+      put 'like', to: "articles#vote"
     end
   end
 

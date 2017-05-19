@@ -11,6 +11,8 @@ class Article < ApplicationRecord
   validates :title, presence: true, length: {minimum: 10, maximum: 120}
   validates :body, presence: true, length: {minimum: 100}
 
+  acts_as_votable
+
   self.per_page = 10
 
   def self.search(text)

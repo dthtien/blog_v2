@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_article, only: :create
-  before_action :find_comment,   only: [:update, :edit, :destroy]
+  before_action :find_comment,   only: [:update, :edit, :destroy, :vote]
 
   def create
     @comment = @article.comments.build(comment_params)
@@ -32,6 +32,15 @@ class CommentsController < ApplicationController
     authorize @comment
     @comment.destroy
     flash[:notice] = "Comment was deleted!"
+    redirect_to :back
+  end
+
+  def vote
+     if @comment.get_upvotes.blank?
+      @comment.upvote_by current_user
+    else
+       @comment.downvote_by current_user
+    end
     redirect_to :back
   end
 

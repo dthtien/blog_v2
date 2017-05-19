@@ -43,6 +43,15 @@ class ArticlesController < ApplicationController
     redirect_to :back
   end
 
+  def vote
+    if @article.get_upvotes.blank?
+      @article.upvote_by current_user
+    else
+       @article.downvote_by current_user
+    end
+    redirect_to :back
+  end
+
   private
     def article_params
       params.require(:article).permit(:title, :body, :image)

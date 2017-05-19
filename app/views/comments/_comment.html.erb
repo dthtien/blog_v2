@@ -9,5 +9,10 @@
   <div class="comment-content">
     <%= markdown(comment.content) %>
   </div> 
+  <div class="chip blue">
+      <%= link_to pluralize(comment.get_upvotes.size, 'like'), like_comment_path(comment), method: :put,
+         class: 'white-text tooltipped',
+         data: { position: :left, delay: 10, tooltip: "Like comment"}%>
+    </div>
   <div class="divider"></div>
 </div>

@@ -11,6 +11,15 @@
       <%= image_tag @article.image.url unless  @article.image.blank? %>
       <%= markdown(@article.body) %>
     </div>
+    <div class="chip blue right">
+      <%= link_to pluralize(@article.get_upvotes.size, 'like'), like_article_path(@article), method: :put,
+         class: 'white-text tooltipped',
+         data: { position: :left, delay: 10, tooltip: "Like article"}%>
+    </div>
+    <%= link_to :back, class: "tooltipped", data: { position: :left, delay: 10,
+      tooltip: "Back"} do%>
+      <i class="material-icons">arrow_back</i>
+    <% end %>
   </blockquote>
 </div>
 <% unless @article.comments.blank?  %>
