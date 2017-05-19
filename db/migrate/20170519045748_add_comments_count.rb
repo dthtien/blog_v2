@@ -4,7 +4,7 @@ class AddCommentsCount < ActiveRecord::Migration[5.0]
 
     Article.reset_column_information
     Article.all.each do |a|
-      a.update_attribute :comments_count, a.comments.length
+      a.update_counters a.id, comments_count: a.comments.length
     end
   end
 
