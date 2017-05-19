@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   has_many :comments
 
   default_scope -> { order(created_at: :desc) }

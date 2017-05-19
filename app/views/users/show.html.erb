@@ -4,6 +4,7 @@
       <div class="card center user-info">
         <p><strong>Username: </strong> <%= @user.username %></p>
         <p><strong>Email: </strong><%= @user.email %></p>
+        <i>(Created <%= pluralize(@user.articles_count, 'article') %>)</i>
         <% if user_signed_in? && @user == current_user %>
           <%= link_to edit_user_registration_path, class: "btn-floating blue tooltipped",
            data:{position: "left", delay: "10", tooltip: "Edit user"} do %>
