@@ -15,7 +15,9 @@
     <div class="col s12 m8 l8 card hoverable">
       <%= "There are no articles" if @user.articles.blank?%>
       <%= render @user.articles %>
-      <%= will_paginate @articles %>
+      <div class="center">
+        <%= will_paginate @articles %>
+      </div>
     </div>
   </div>
 </div>

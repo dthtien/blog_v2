@@ -1,0 +1,5 @@
+en:
+  will_paginate:
+    previous_label: "<i class='material-icons'>chevron_left</i>"
+    next_label: "<i class='material-icons'>chevron_right</i>"
+    page_gap: "<i class='material-icons'>more_horiz</i>"
