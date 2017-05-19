@@ -5,8 +5,6 @@ class Search
   end
 
   def articles
-    Article.search do
-      fulltext term
-    end.results
+    Article.search(term)
   end
 end

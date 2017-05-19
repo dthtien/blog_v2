@@ -10,8 +10,9 @@ class Article < ApplicationRecord
 
   self.per_page = 10
 
-  searchable do
-    text :title, :body
+  def self.search(text)
+    text ="#{text}"
+    where('title LIKE ? OR body LIKE ?', "%#{text}%", "%#{text}%")
   end
 
   private
