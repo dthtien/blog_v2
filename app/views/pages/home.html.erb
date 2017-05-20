@@ -2,11 +2,11 @@
   <%= simple_form_for :search, url: search_path, method: :get,
     html: { autocomplete: "off" } do |f| %>
     <div class="row">
-      <div class="input-field col s11 m11 l11">
+      <div class="input-field col s12 m11 l11">
         <%= f.text_field :term %>
         <%= f.label :search_article %>
       </div>
-      <div class="input-field col s1 m1 l1">
+      <div class="input-field col s12 m1 l1">
         <%= f.button :button,  class: "waves-effect waves-light" do %>
           <i class="material-icons">search</i>
         <% end %>
@@ -14,7 +14,9 @@
     </div>
   <% end %>
 </div>
-<%= render @articles %>
+<div class="container">
+  <%= render @articles %>
+</div>
 <div class="center">
   <%= will_paginate @articles %>
 </div>

@@ -6,11 +6,11 @@
   </i>
   <div class="row">
     <% unless article.image.blank? %>
-      <div class="col s12 m2 l2">
-        <%=link_to image_tag(article.image.url, style: "height: 100px; width: 100px"), article %>
+      <div class="col s12 m4 l2">
+        <%=link_to image_tag(article.image.url, style: "height: 100px; width: 100px"), article, class: "responsive-img" %>
       </div>
     <% end %>
-    <div class="col s12 m10 l10">
+    <div class="col s12 m8 l10">
       <%= markdown(article.description) %><%= link_to "See more >>", article %>
     </div>
   </div>

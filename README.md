@@ -32,8 +32,9 @@ The following is a list of **required** features of the application you'll build
 The following **optional** features are implemented:
 
 * [x] User can see who created the Article.
-* [] User can see how many views an Article has.
+* [x] User can see how many views an Article has.
 * [x] User can see who created the Comment.
+* [ ] User can add "tags" to a Article, and filter Articles by tag.
 
 
 The following **additional** features are implemented:
