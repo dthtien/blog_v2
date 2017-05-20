@@ -43,7 +43,6 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough 
 
-
 ![Video Walkthrough](public/prework.gif)
 [Full Video](https://youtu.be/ivJdpNRnRc8)
 GIF created with [Makeagif](http://makeagif.com).
