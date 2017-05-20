@@ -9,7 +9,7 @@
       <%= link_to "#{@article.user.username} (#{@article.user.email})", @article.user %>  
     </i>
     <div class="article-content">
-      <%= image_tag @article.image.url unless  @article.image.blank? %>
+      <%= image_tag(@article.image.url,class: "responsive-img") unless  @article.image.blank? %>
       <%= markdown(@article.body) %>
     </div>
     <%= link_to pluralize(@article.get_downvotes.size, 'dislike'), like_article_path(@article), method: :put, class: 'white-text tooltipped chip red right',

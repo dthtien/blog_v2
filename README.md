@@ -38,37 +38,20 @@ The following **optional** features are implemented:
 
 
 The following **additional** features are implemented:
-User can like article and comment
+*User can like article and comment
 
 
 ## Video Walkthrough 
 
-Here's a walkthrough of implemented user stories:
 
-> HINT: You can put a `walkthrough.gif` file in your project folder, add to git, and use the following syntax to embed it:  
-> `![Video Walkthrough](walkthrough.gif)` 
-> 
-
-![Video Walkthrough](/path/to/your/gif/file)
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+![Video Walkthrough](http://i.imgur.com/frhCZ3I.gifv)
+[Full Video](https://youtu.be/ivJdpNRnRc8)
+GIF created with [Makeagif](http://makeagif.com).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I don't know how to create video walkthrough
 
 ## License
 
     Copyright [2017]  [The Tien](https://github.com/dthtien)
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
