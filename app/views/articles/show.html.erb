@@ -15,7 +15,7 @@
        data: { position: :right, delay: 10, tooltip: "Dislike article"}%>
     <%= link_to pluralize(@article.get_upvotes.size, 'like'), like_article_path(@article), method: :put, class: 'white-text tooltipped chip blue right',
        data: { position: :left, delay: 10, tooltip: "Like article"}%>
-    <%= link_to :back, class: "tooltipped", data: { position: :left, delay: 10,
+    <%= link_to root_path, class: "tooltipped", data: { position: :left, delay: 10,
       tooltip: "Back"} do%>
       <i class="material-icons">arrow_back</i>
     <% end %>

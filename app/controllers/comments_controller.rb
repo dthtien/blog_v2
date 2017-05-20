@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_article, only: :create
-  before_action :find_comment
+  before_action :find_comment, except: :create
   def create
     @comment = @article.comments.build(comment_params)
     @comment.user = current_user

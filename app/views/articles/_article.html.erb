@@ -4,9 +4,16 @@
     <%= display_time(article.updated_at) %> by
     <%= link_to "#{article.user.username} (#{article.user.email})", article.user %>  
   </i>
-  <p>
-    <%= markdown(article.description) %><%= link_to "See more >>", article %>
-  </p>
+  <div class="row">
+    <% unless article.image.blank? %>
+      <div class="col s12 m2 l2">
+        <%=link_to image_tag(article.image.url, style: "height: 100px; width: 100px"), article %>
+      </div>
+    <% end %>
+    <div class="col s12 m10 l10">
+      <%= markdown(article.description) %><%= link_to "See more >>", article %>
+    </div>
+  </div>
   <p class="chip"><%= link_to pluralize(article.comments_count, 'comment'), article %></p>
   <p class="chip"><%= link_to pluralize(article.get_upvotes.size, 'like'), like_article_path(article), method: :put %></p>
   <p class="chip"><%= link_to pluralize(article.get_downvotes.size, 'dislike'), dislike_article_path(article), method: :put %></p>

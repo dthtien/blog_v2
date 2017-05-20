@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
     authorize @article
     @article.destroy
     flash[:notice] = "Article was deleted"
-    redirect_to :back
+    redirect_to root_path
   end
 
   def upvote
