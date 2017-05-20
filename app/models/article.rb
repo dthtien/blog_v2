@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   belongs_to :user, counter_cache: true
   has_many :comments
+  has_many :impressions, as: :impressionable
 
   default_scope -> { order(created_at: :desc) }
   before_save :set_description, on: :create
@@ -18,6 +19,14 @@ class Article < ApplicationRecord
   def self.search(text)
     where('lower(title) LIKE ? OR lower(body) LIKE ?',
       "%#{text.downcase}%", "%#{text.downcase}%")
+  end
+
+  def impression_count
+    impressions.size
+  end
+
+  def unique_impression_count
+    impressions.group(:ip_address).size.keys.length
   end
 
   private

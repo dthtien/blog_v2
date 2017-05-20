@@ -4,6 +4,7 @@
        activate_id: dom_id(@article, :edit) %>
     <h3><%= @article.title %></h3>
     <i class="display-time">
+    <p class="chip right"><%=pluralize(@article.unique_impression_count, "view") %></p>
       <%= display_time(@article.updated_at) %> by
       <%= link_to "#{@article.user.username} (#{@article.user.email})", @article.user %>  
     </i>

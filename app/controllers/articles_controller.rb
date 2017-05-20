@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: :show
   before_action :find_article, except: [:new, :create]
+  before_action :log_impression, only: :show
 
   def show
     @comment = Comment.new
@@ -60,5 +61,11 @@ class ArticlesController < ApplicationController
 
     def find_article
       @article = Article.includes(:user, :comments).find(params[:id])
+    end
+
+    def log_impression
+      @article = Article.find(params[:id])
+      # this assumes you have a current_user method in your authentication system
+      @article.impressions.create(ip_address: request.remote_ip)
     end
 end
