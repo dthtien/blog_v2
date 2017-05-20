@@ -43,7 +43,7 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough 
 
-
+[gif](http://i.imgur.com/frhCZ3I.gifv?raw=true)
 ![Video Walkthrough](http://i.imgur.com/frhCZ3I.gifv?raw=true)
 [Full Video](https://youtu.be/ivJdpNRnRc8)
 GIF created with [Makeagif](http://makeagif.com).
