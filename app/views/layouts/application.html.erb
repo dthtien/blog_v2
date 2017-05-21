@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Prework</title>
+    <title>Prework - Blog</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,7 @@
   <body>
     <nav class="nav-extended">
       <div class="nav-wrapper">
-        <%= link_to "Reddit", root_path, class: "brand-logo" %>
+        <%= link_to "Prework-Blog", root_path, class: "brand-logo" %>
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
