@@ -29,12 +29,12 @@ class Article < ApplicationRecord
     impressions.group(:ip_address).size.keys.length
   end
 
+  def is_update?
+    self.updated_at != created_at
+  end
+
   private
     def set_description
       self.description = body[0..120]
-    end
-
-    def set_title
-      self.title = title.downcase
     end
 end

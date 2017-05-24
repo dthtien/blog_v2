@@ -1,9 +1,16 @@
 <div class="article">
   <h5><%= link_to article.title, article %></h5>
   <i class="display-time">
-    <%= display_time(article.updated_at) %> by
-    <%= link_to "#{article.user.username} (#{article.user.email})", article.user %>  
+    <%= display_time(article.created_at) %> by
+    <%= link_to "#{article.user.username} (#{article.user.email})", article.user %>
   </i>
+  <br>
+  <% if article.is_update? %>
+    <i class="display-time">
+      Updated
+      <%= display_time(article.updated_at) %>
+    </i> 
+  <% end %> 
   <div class="row">
     <% unless article.image.blank? %>
       <div class="col s12 m4 l2">
