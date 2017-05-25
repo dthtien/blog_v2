@@ -5,7 +5,7 @@
     <h3><%= @article.title %></h3>
     <i class="display-time">
       <p class="chip right"><%=pluralize(@article.impression_count, "view") %></p>
-      <%= display_time(@article.updated_at) %> by
+      <%= display_time(@article.created_at) %> by
       <%= link_to "#{@article.user.username} (#{@article.user.email})", @article.user %>  
     </i>
     <% if @article.is_update? %>
