@@ -2,9 +2,8 @@
   <%= simple_form_for :search, url: search_path, method: :get,
     html: { autocomplete: "off" } do |f| %>
     <div class="row">
-      <div class="input-field col s12 m11 l11">
-        <%= f.text_field :term %>
-        <%= f.label :search_article %>
+      <div class=" card hoverable col s12 m11 l11">
+        <%= f.text_field :term, class: "small" %>
       </div>
       <div class="input-field col s12 m1 l1">
         <%= f.button :button,  class: "waves-effect waves-light" do %>

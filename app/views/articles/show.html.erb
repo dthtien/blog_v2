@@ -8,6 +8,12 @@
       <%= display_time(@article.updated_at) %> by
       <%= link_to "#{@article.user.username} (#{@article.user.email})", @article.user %>  
     </i>
+    <% if @article.is_update? %>
+      <i class="display-time">
+        Updated
+        <%= display_time(@article.updated_at) %>
+      </i> 
+    <% end %> 
     <div class="article-content">
       <%= image_tag(@article.image.url,class: "responsive-img") unless  @article.image.blank? %>
       <%= markdown(@article.body) %>
