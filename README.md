@@ -46,7 +46,7 @@ The following **additional** features are implemented:
 ![Video Walkthrough](public/prework.gif)
 [Full Video](https://youtu.be/ivJdpNRnRc8)
 GIF created with [Makeagif](http://makeagif.com).
-
+ 
 ## Notes
 
 I don't know how to create video walkthrough
